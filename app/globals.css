@@ -1,0 +1,672 @@
+@import 'tailwindcss';
+@import 'tw-animate-css';
+@import 'shadcn/tailwind.css';
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+  --color-sidebar-ring: var(--sidebar-ring);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar: var(--sidebar);
+  --color-chart-5: var(--chart-5);
+  --color-chart-4: var(--chart-4);
+  --color-chart-3: var(--chart-3);
+  --color-chart-2: var(--chart-2);
+  --color-chart-1: var(--chart-1);
+  --color-ring: var(--ring);
+  --color-input: var(--input);
+  --color-border: var(--border);
+  --color-destructive: var(--destructive);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-accent: var(--accent);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-muted: var(--muted);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-secondary: var(--secondary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-primary: var(--primary);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-popover: var(--popover);
+  --color-card-foreground: var(--card-foreground);
+  --color-card: var(--card);
+  --color-foreground: var(--foreground);
+  --color-background: var(--background);
+  --radius-sm: calc(var(--radius) * 0.6);
+  --radius-md: calc(var(--radius) * 0.8);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) * 1.4);
+  --radius-2xl: calc(var(--radius) * 1.8);
+  --radius-3xl: calc(var(--radius) * 2.2);
+  --radius-4xl: calc(var(--radius) * 2.6);
+  --color-navy: var(--navy);
+  --color-navy-700: var(--navy-700);
+  --color-navy-600: var(--navy-600);
+  --color-navy-400: var(--navy-400);
+  --color-gold: var(--gold);
+  --color-crimson: var(--crimson);
+  --color-crimson-600: var(--crimson-600);
+  --color-paper: var(--paper);
+  --font-sans: var(--font-open-sans), ui-sans-serif, system-ui, sans-serif;
+  --font-display: var(--font-pt-sans), var(--font-open-sans), ui-sans-serif, sans-serif;
+}
+
+:root {
+  color-scheme: light;
+  --background: oklch(1 0 0);
+  --foreground: oklch(0.145 0 0);
+  --card: oklch(1 0 0);
+  --card-foreground: oklch(0.145 0 0);
+  --popover: oklch(1 0 0);
+  --popover-foreground: oklch(0.145 0 0);
+  --primary: oklch(0.205 0 0);
+  --primary-foreground: oklch(0.985 0 0);
+  --secondary: oklch(0.97 0 0);
+  --secondary-foreground: oklch(0.205 0 0);
+  --muted: oklch(0.97 0 0);
+  --muted-foreground: oklch(0.556 0 0);
+  --accent: oklch(0.97 0 0);
+  --accent-foreground: oklch(0.205 0 0);
+  --destructive: oklch(0.577 0.245 27.325);
+  --border: oklch(0.922 0 0);
+  --input: oklch(0.922 0 0);
+  --ring: oklch(0.708 0 0);
+  --chart-1: oklch(0.87 0 0);
+  --chart-2: oklch(0.556 0 0);
+  --chart-3: oklch(0.439 0 0);
+  --chart-4: oklch(0.371 0 0);
+  --chart-5: oklch(0.269 0 0);
+  --radius: 0.75rem;
+  --navy: #0c2340;
+  --navy-700: #0a1d36;
+  --navy-600: #142d52;
+  --navy-400: #33578a;
+  --gold: #cba24b;
+  --crimson: #a11c20;
+  --crimson-600: #8a171b;
+  --paper: #f4f6fa;
+  --sidebar: oklch(0.985 0 0);
+  --sidebar-foreground: oklch(0.145 0 0);
+  --sidebar-primary: oklch(0.205 0 0);
+  --sidebar-primary-foreground: oklch(0.985 0 0);
+  --sidebar-accent: oklch(0.97 0 0);
+  --sidebar-accent-foreground: oklch(0.205 0 0);
+  --sidebar-border: oklch(0.922 0 0);
+  --sidebar-ring: oklch(0.708 0 0);
+}
+
+.dark {
+  color-scheme: dark;
+  --background: oklch(0.145 0 0);
+  --foreground: oklch(0.985 0 0);
+  --card: oklch(0.205 0 0);
+  --card-foreground: oklch(0.985 0 0);
+  --popover: oklch(0.205 0 0);
+  --popover-foreground: oklch(0.985 0 0);
+  --primary: oklch(0.922 0 0);
+  --primary-foreground: oklch(0.205 0 0);
+  --secondary: oklch(0.269 0 0);
+  --secondary-foreground: oklch(0.985 0 0);
+  --muted: oklch(0.269 0 0);
+  --muted-foreground: oklch(0.708 0 0);
+  --accent: oklch(0.269 0 0);
+  --accent-foreground: oklch(0.985 0 0);
+  --destructive: oklch(0.704 0.191 22.216);
+  --border: oklch(1 0 0 / 10%);
+  --input: oklch(1 0 0 / 15%);
+  --ring: oklch(0.556 0 0);
+  --chart-1: oklch(0.87 0 0);
+  --chart-2: oklch(0.556 0 0);
+  --chart-3: oklch(0.439 0 0);
+  --chart-4: oklch(0.371 0 0);
+  --chart-5: oklch(0.269 0 0);
+  --sidebar: oklch(0.205 0 0);
+  --sidebar-foreground: oklch(0.985 0 0);
+  --sidebar-primary: oklch(0.488 0.243 264.376);
+  --sidebar-primary-foreground: oklch(0.985 0 0);
+  --sidebar-accent: oklch(0.269 0 0);
+  --sidebar-accent-foreground: oklch(0.985 0 0);
+  --sidebar-border: oklch(1 0 0 / 10%);
+  --sidebar-ring: oklch(0.556 0 0);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not(.light) {
+    color-scheme: dark;
+    --background: oklch(0.145 0 0);
+    --foreground: oklch(0.985 0 0);
+    --card: oklch(0.205 0 0);
+    --card-foreground: oklch(0.985 0 0);
+    --popover: oklch(0.205 0 0);
+    --popover-foreground: oklch(0.985 0 0);
+    --primary: oklch(0.922 0 0);
+    --primary-foreground: oklch(0.205 0 0);
+    --secondary: oklch(0.269 0 0);
+    --secondary-foreground: oklch(0.985 0 0);
+    --muted: oklch(0.269 0 0);
+    --muted-foreground: oklch(0.708 0 0);
+    --accent: oklch(0.269 0 0);
+    --accent-foreground: oklch(0.985 0 0);
+    --destructive: oklch(0.704 0.191 22.216);
+    --border: oklch(1 0 0 / 10%);
+    --input: oklch(1 0 0 / 15%);
+    --ring: oklch(0.556 0 0);
+    --chart-1: oklch(0.87 0 0);
+    --chart-2: oklch(0.556 0 0);
+    --chart-3: oklch(0.439 0 0);
+    --chart-4: oklch(0.371 0 0);
+    --chart-5: oklch(0.269 0 0);
+    --sidebar: oklch(0.205 0 0);
+    --sidebar-foreground: oklch(0.985 0 0);
+    --sidebar-primary: oklch(0.488 0.243 264.376);
+    --sidebar-primary-foreground: oklch(0.985 0 0);
+    --sidebar-accent: oklch(0.269 0 0);
+    --sidebar-accent-foreground: oklch(0.985 0 0);
+    --sidebar-border: oklch(1 0 0 / 10%);
+    --sidebar-ring: oklch(0.556 0 0);
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+/* ---- Brand motion system ---- */
+@keyframes aurora-drift {
+  0% {
+    transform: translate3d(-8%, -6%, 0) rotate(0deg) scale(1.15);
+  }
+  50% {
+    transform: translate3d(8%, 6%, 0) rotate(8deg) scale(1.3);
+  }
+  100% {
+    transform: translate3d(-8%, -6%, 0) rotate(0deg) scale(1.15);
+  }
+}
+
+@keyframes aurora-drift-slow {
+  0% {
+    transform: translate3d(6%, 8%, 0) rotate(0deg) scale(1.2);
+  }
+  50% {
+    transform: translate3d(-6%, -8%, 0) rotate(-10deg) scale(1.35);
+  }
+  100% {
+    transform: translate3d(6%, 8%, 0) rotate(0deg) scale(1.2);
+  }
+}
+
+@keyframes gradient-pan {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+@keyframes float-y {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+@keyframes pulse-node {
+  0%,
+  100% {
+    opacity: 0.25;
+  }
+  50% {
+    opacity: 0.9;
+  }
+}
+
+@keyframes shine {
+  0% {
+    transform: translateX(-120%) skewX(-12deg);
+  }
+  100% {
+    transform: translateX(220%) skewX(-12deg);
+  }
+}
+
+.animate-aurora {
+  animation: aurora-drift 18s ease-in-out infinite;
+}
+.animate-aurora-slow {
+  animation: aurora-drift-slow 26s ease-in-out infinite;
+}
+.animate-gradient-pan {
+  background-size: 220% 220%;
+  animation: gradient-pan 16s ease infinite;
+}
+.animate-float-y {
+  animation: float-y 7s ease-in-out infinite;
+}
+.animate-pulse-node {
+  animation: pulse-node 4s ease-in-out infinite;
+}
+
+/* Sheen sweep used on primary buttons */
+.btn-sheen {
+  position: relative;
+  overflow: hidden;
+}
+.btn-sheen::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    120deg,
+    transparent 0%,
+    rgba(255, 255, 255, 0.35) 50%,
+    transparent 100%
+  );
+  transform: translateX(-120%) skewX(-12deg);
+  pointer-events: none;
+}
+.btn-sheen:hover::after {
+  animation: shine 0.9s ease;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-aurora,
+  .animate-aurora-slow,
+  .animate-gradient-pan,
+  .animate-float-y,
+  .animate-pulse-node {
+    animation: none;
+  }
+}
+
+/* ============================================================
+   Dashboard theme
+   Scoped to .dash so it can't disturb the login pages' tokens.
+
+   Chart palette is built from UWI's brand colours:
+     Blue   300C #005eb8   Yellow 130C #f2a900
+     Orange 144C #ed8b00   Red    185C #e4002b
+
+   Three rules shaped how they are used:
+   1. Yellow 130C and Orange 144C are only ΔE 7.8 apart under deuteranopia —
+      far below the 12 floor. They CANNOT both be data colours. Yellow takes
+      electricity; orange is deepened toward 185C (#d2600a) for queries, which
+      lifts separation to ΔE 17.8 and ties the warm end of the brand together.
+   2. Red 185C is reserved for critical status, where it belongs semantically.
+      It is never a data series.
+   3. The three query types are one 300C blue ramp (ordinal, by share), not a
+      categorical set — that is what keeps the page vibrant without inventing
+      colours the brand doesn't have.
+
+   Dark is its own validated set at matched lightness (not a brightened light
+   set), so the three hues sit in harmony on navy instead of one shouting.
+   Everything below passes against the real surfaces (#ffffff / #0e2138).
+   ============================================================ */
+.dash {
+  color-scheme: light;
+  --dash-page: #f1f4f9;
+  --dash-surface: #ffffff;
+  --dash-raised: #f7f9fc;
+  --dash-ink: #0c2340;
+  --dash-ink-2: #4a5a70;
+  --dash-muted: #8496ad;
+  --dash-border: rgba(12, 35, 64, 0.1);
+  --dash-grid: rgba(12, 35, 64, 0.07);
+  --dash-shadow: 0 1px 2px rgba(12, 35, 64, 0.04),
+    0 8px 24px -12px rgba(12, 35, 64, 0.12);
+  /* Sidebar promo card — always a dark navy panel, in both themes, so it reads
+     as a distinct object rather than another surface. */
+  --dash-cta: linear-gradient(145deg, #1b3c68 0%, #0c2340 100%);
+
+  /* categorical — entity-stable */
+  --s-elec: #e0a000; /* 130C yellow          — electricity */
+  --s-water: #005eb8; /* 300C blue            — water */
+  --s-query: #d2600a; /* 144C deepened to 185C — queries */
+
+  /* Ordinal ramps — one hue each, for part-to-whole breakdowns (query types,
+     bill composition). Darkest = largest share on light surfaces. */
+  --s-blue-1: #00305e;
+  --s-blue-2: #005eb8;
+  --s-blue-3: #7fb3e3;
+
+  --s-amber-1: #7a5200;
+  --s-amber-2: #b87d00;
+  --s-amber-3: #e0a000;
+}
+
+/* Toggle wins in both directions; OS preference is the fallback. */
+:root[data-theme='dark'] .dash {
+  color-scheme: dark;
+  --dash-page: #071426;
+  --dash-surface: #0e2138;
+  --dash-raised: #142a45;
+  --dash-ink: #ffffff;
+  --dash-ink-2: rgba(255, 255, 255, 0.72);
+  --dash-muted: rgba(255, 255, 255, 0.45);
+  --dash-border: rgba(255, 255, 255, 0.1);
+  --dash-grid: rgba(255, 255, 255, 0.07);
+  --dash-shadow: 0 1px 2px rgba(0, 0, 0, 0.3), 0 8px 30px -12px rgba(0, 0, 0, 0.6);
+  --dash-cta: linear-gradient(145deg, #2a4d84 0%, #12294a 100%);
+
+  /* matched lightness (OKLCH L .60-.66) so the three read as one family */
+  --s-elec: #bc8a1c;
+  --s-water: #4a95dd;
+  --s-query: #d1662c;
+
+  /* ramps invert on dark: lightest = largest share */
+  --s-blue-1: #cfe3f7;
+  --s-blue-2: #6ea9e6;
+  --s-blue-3: #1a63a8;
+
+  --s-amber-1: #f5d98a;
+  --s-amber-2: #d5a53f;
+  --s-amber-3: #8a6410;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:where(:not([data-theme='light'])) .dash {
+    color-scheme: dark;
+    --dash-page: #071426;
+    --dash-surface: #0e2138;
+    --dash-raised: #142a45;
+    --dash-ink: #ffffff;
+    --dash-ink-2: rgba(255, 255, 255, 0.72);
+    --dash-muted: rgba(255, 255, 255, 0.45);
+    --dash-border: rgba(255, 255, 255, 0.1);
+    --dash-grid: rgba(255, 255, 255, 0.07);
+    --dash-shadow: 0 1px 2px rgba(0, 0, 0, 0.3),
+      0 8px 30px -12px rgba(0, 0, 0, 0.6);
+    --dash-cta: linear-gradient(145deg, #2a4d84 0%, #12294a 100%);
+
+    --s-elec: #bc8a1c;
+    --s-water: #4a95dd;
+    --s-query: #d1662c;
+
+    --s-blue-1: #cfe3f7;
+    --s-blue-2: #6ea9e6;
+    --s-blue-3: #1a63a8;
+
+    --s-amber-1: #f5d98a;
+    --s-amber-2: #d5a53f;
+    --s-amber-3: #8a6410;
+  }
+}
+
+/* Status — fixed, never themed. Always paired with an icon + label.
+   Critical is UWI red 185C: the brand's red doing semantic work rather than
+   decorating a chart. Kept out of the series palette so it can't impersonate
+   a data colour. */
+.dash {
+  --st-good: #0ca30c;
+  --st-warning: #fab219;
+  --st-serious: #ec835a;
+  --st-critical: #e4002b;
+}
+
+/* ============================================================
+   App theme — the new multi-role product (Client portal, Supervisor,
+   Admin). Scoped to .app and toggle-aware like .dash: a data-theme
+   stamp beats the OS preference, which is the fallback.
+
+   Numbers/data use the sans (Roboto) with .lnum so figures line up;
+   Lora (font-display) is reserved for prose headings.
+   ============================================================ */
+.app {
+  color-scheme: light;
+  --bg: #eef1f7;
+  --surface: #ffffff;
+  --raised: #f4f7fb;
+  --ink: #0c2340;
+  --ink-2: #45566d;
+  --muted: #7c8aa1;
+  --line: rgba(12, 35, 64, 0.1);
+  --line-2: rgba(12, 35, 64, 0.16);
+  --brand: #0c2340;
+  --brand-600: #142d52;
+  --accent: #005eb8;
+  --accent-strong: #005eb8;
+  --gold: #b8901f;
+  --elec: #b8901f;
+  --water: #005eb8;
+  --ok: #0c7a3a;
+  --warn: #a8730a;
+  --bad: #a11c20;
+  --ok-wash: rgba(12, 122, 58, 0.12);
+  --warn-wash: rgba(168, 115, 10, 0.14);
+  --bad-wash: rgba(161, 28, 32, 0.09);
+  --accent-wash: rgba(0, 94, 184, 0.1);
+  --shadow: 0 1px 2px rgba(12, 35, 64, 0.04), 0 10px 26px -18px rgba(12, 35, 64, 0.26);
+}
+
+:root[data-theme='dark'] .app {
+  color-scheme: dark;
+  --bg: #071426;
+  --surface: #0e2138;
+  --raised: #142a45;
+  --ink: #f3f6fb;
+  --ink-2: rgba(255, 255, 255, 0.74);
+  --muted: rgba(255, 255, 255, 0.48);
+  --line: rgba(255, 255, 255, 0.1);
+  --line-2: rgba(255, 255, 255, 0.18);
+  --brand: #0e2138;
+  --brand-600: #24406e;
+  --accent: #4a95dd;
+  --accent-strong: #6ea9e6;
+  --gold: #d5a53f;
+  --elec: #d5a53f;
+  --water: #4a95dd;
+  --ok: #4cc47f;
+  --warn: #e0b64a;
+  --bad: #e07a7e;
+  --ok-wash: rgba(76, 196, 127, 0.14);
+  --warn-wash: rgba(224, 182, 74, 0.14);
+  --bad-wash: rgba(224, 122, 126, 0.13);
+  --accent-wash: rgba(74, 149, 221, 0.15);
+  --shadow: 0 1px 2px rgba(0, 0, 0, 0.3), 0 12px 30px -18px rgba(0, 0, 0, 0.7);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:where(:not([data-theme='light'])) .app {
+    color-scheme: dark;
+    --bg: #071426;
+    --surface: #0e2138;
+    --raised: #142a45;
+    --ink: #f3f6fb;
+    --ink-2: rgba(255, 255, 255, 0.74);
+    --muted: rgba(255, 255, 255, 0.48);
+    --line: rgba(255, 255, 255, 0.1);
+    --line-2: rgba(255, 255, 255, 0.18);
+    --brand: #0e2138;
+    --brand-600: #24406e;
+    --accent: #4a95dd;
+    --accent-strong: #6ea9e6;
+    --gold: #d5a53f;
+    --elec: #d5a53f;
+    --water: #4a95dd;
+    --ok: #4cc47f;
+    --warn: #e0b64a;
+    --bad: #e07a7e;
+    --ok-wash: rgba(76, 196, 127, 0.14);
+    --warn-wash: rgba(224, 182, 74, 0.14);
+    --bad-wash: rgba(224, 122, 126, 0.13);
+    --accent-wash: rgba(74, 149, 221, 0.15);
+    --shadow: 0 1px 2px rgba(0, 0, 0, 0.3), 0 12px 30px -18px rgba(0, 0, 0, 0.7);
+  }
+}
+
+.lnum {
+  font-variant-numeric: lining-nums tabular-nums;
+}
+
+/* Print — re-light the .app tokens to black-ink-on-white so an "Export PDF"
+   (the browser's print pipeline) is a clean document even from dark mode. */
+@media print {
+  .app,
+  :root[data-theme='dark'] .app,
+  :root:where(:not([data-theme='light'])) .app {
+    color-scheme: light;
+    --bg: #ffffff;
+    --surface: #ffffff;
+    --raised: #f6f8fb;
+    --ink: #0c2340;
+    --ink-2: #3c4b60;
+    --muted: #6b7c93;
+    --line: rgba(12, 35, 64, 0.18);
+    --line-2: rgba(12, 35, 64, 0.28);
+    --shadow: none;
+  }
+  .app {
+    background: #ffffff !important;
+  }
+}
+
+/* ---- Chart motion ---- */
+@keyframes bar-grow {
+  from {
+    transform: scaleY(0);
+  }
+  to {
+    transform: scaleY(1);
+  }
+}
+
+@keyframes draw-line {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+@keyframes fade-rise {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes live-ping {
+  0% {
+    transform: scale(1);
+    opacity: 0.6;
+  }
+  70%,
+  100% {
+    transform: scale(2.4);
+    opacity: 0;
+  }
+}
+
+.animate-bar-grow {
+  transform-origin: bottom;
+  animation: bar-grow 0.9s cubic-bezier(0.22, 1, 0.36, 1) backwards;
+}
+.animate-draw-line {
+  animation: draw-line 1.6s cubic-bezier(0.65, 0, 0.35, 1) forwards;
+}
+.animate-fade-rise {
+  animation: fade-rise 0.6s ease-out backwards;
+}
+.animate-live-ping {
+  animation: live-ping 2s cubic-bezier(0, 0, 0.2, 1) infinite;
+}
+
+/* Donut segments draw in via dasharray (dashoffset carries their position). */
+.donut-seg {
+  transition:
+    stroke-dasharray 1s cubic-bezier(0.65, 0, 0.35, 1),
+    stroke-width 0.2s ease,
+    opacity 0.2s ease;
+}
+
+/* KPI gauges sweep the same way, for the same reason. */
+.ring-arc {
+  transition: stroke-dasharray 1.1s cubic-bezier(0.65, 0, 0.35, 1);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-bar-grow,
+  .animate-draw-line,
+  .animate-fade-rise,
+  .animate-live-ping {
+    animation: none;
+  }
+  /* a line drawn with dashoffset must be shown, not left invisible */
+  .animate-draw-line {
+    stroke-dashoffset: 0 !important;
+  }
+  .donut-seg,
+  .ring-arc {
+    transition: none;
+  }
+}
+
+/* ============================================================
+   Print — "Export PDF" is the browser's own print pipeline, so the report has
+   to be a real document rather than a screenshot of a dark dashboard.
+
+   The dark tokens are re-lit here at matching specificity (and later in the
+   file), so a report printed at midnight in dark mode still comes out on white
+   paper with black ink.
+   ============================================================ */
+@media print {
+  .dash,
+  :root[data-theme='dark'] .dash,
+  :root:where(:not([data-theme='light'])) .dash {
+    color-scheme: light;
+    --dash-page: #ffffff;
+    --dash-surface: #ffffff;
+    --dash-raised: #f6f8fb;
+    --dash-ink: #0c2340;
+    --dash-ink-2: #3c4b60;
+    --dash-muted: #6b7c93;
+    --dash-border: rgba(12, 35, 64, 0.2);
+    --dash-grid: rgba(12, 35, 64, 0.12);
+    --dash-shadow: none;
+
+    /* Series colours darken for ink — the light-mode yellow is too pale on paper. */
+    --s-elec: #8a6410;
+    --s-water: #005eb8;
+  }
+
+  .dash {
+    background: #ffffff !important;
+    display: block !important;
+  }
+
+  .dash main {
+    padding: 0 !important;
+  }
+
+  #report {
+    border: none !important;
+    box-shadow: none !important;
+  }
+
+  /* Don't split a section across a page break mid-argument. */
+  #report section {
+    break-inside: avoid;
+  }
+
+  @page {
+    margin: 16mm;
+  }
+}
